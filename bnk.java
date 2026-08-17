@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Bank {
+public class bnk {
 
      String bankName;//instance variables where we use it in constructor
     int userId;
@@ -9,7 +9,7 @@ public class Bank {
     String accountType;
     double balance;
 
-    Bank(String bankName,int userId,String userName,long accountNumber,String accountType,double balance){
+    bnk(String bankName,int userId,String userName,long accountNumber,String accountType,double balance){
         this.bankName=bankName;
         this.userId=userId;
         this.userName=userName;
@@ -51,7 +51,7 @@ public class Bank {
         System.out.println("Enter Account Type: ");
         System.out.println("Enter Balance: ");
         
-        Bank b3 = new Bank(sc.next(),sc.nextInt(),sc.next(),sc.nextInt(),sc.next(), sc.nextDouble());
+        bnk b3 = new bnk(sc.next(),sc.nextInt(),sc.next(),sc.nextLong(),sc.next(), sc.nextDouble());
 
         b3.displayBankDetails();
         b3.displayUserDetails();
