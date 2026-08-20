@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class Bank {
 
@@ -8,6 +7,7 @@ public class Bank {
     long accountNumber;
     String accountType;
     double balance;
+    
 
     Bank(String bankName,int userId,String userName,long accountNumber,String accountType,double balance){
         this.bankName=bankName;
@@ -16,6 +16,7 @@ public class Bank {
         this.accountNumber=accountNumber;
         this.accountType=accountType;
         this.balance=balance;
+        
     }
 
     void displayBankDetails(){
@@ -42,33 +43,29 @@ public class Bank {
         boolean result=(balance>=minimumBalance);
         return result;
     }
-    public static void main(String[] args) {
-        Scanner sc =new Scanner(System.in);
-        System.out.println("Enter Bank Name: ");
-        System.out.println("Enter User ID: ");
-        System.out.println("Enter User Name: ");
-        System.out.println("Enter Account Number: ");
-        System.out.println("Enter Account Type: ");
-        System.out.println("Enter Balance: ");
-        
-        Bank b3 = new Bank(sc.next(),sc.nextInt(),sc.next(),sc.nextInt(),sc.next(), sc.nextDouble());
 
-        b3.displayBankDetails();
-        b3.displayUserDetails();
-        b3.displayAccountDetails();
-
-        System.out.println("Account Summary: "+b3.createAccountSummary());
-
-        double minimumBal=2000.0;
-
-        if(b3.hasMinimumBalance(minimumBal)){
-            System.out.println("Minimum Balance: "+minimumBal+"is maintained");
+    boolean deposit(double amount){
+        if(amount>0){
+            balance+=amount;
+            return true;
         }
-        else{
-            System.out.println("Minimum Balance: "+minimumBal+"is not maintaned");
-        }
+        return false;
+    }
 
+    boolean withdraw(double amount){
+        if(amount>0 && balance>=amount){
+            balance-=amount;
+            return true;
         }
-       }
+        return false;
+    }
     
+    double checkBalance(){
+        return balance;
+    }
+
+
+
+       
+}
 
