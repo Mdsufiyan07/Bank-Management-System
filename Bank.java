@@ -1,4 +1,3 @@
-
 public class Bank {
 
      String bankName;//instance variables where we use it in constructor
@@ -63,9 +62,12 @@ public class Bank {
     double checkBalance(){
         return balance;
     }
-
+    public static void main(String[] args) {
+        
+    }
+}
 
 
        
-}
+
 
