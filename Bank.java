@@ -44,26 +44,6 @@ public class Bank {
         return result;
     }
 
-    boolean deposit(double amount){
-        if(amount>0){
-            balance+=amount;
-            return true;
-        }
-        return false;
-    }
-
-    boolean withdraw(double amount){
-        if(amount>0 && balance>=amount){
-            balance-=amount;
-            return true;
-        }
-        return false;
-    }
-    
-    double checkBalance(){
-        return balance;
-    }
-
 
 
        
